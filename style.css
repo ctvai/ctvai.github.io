@@ -1,0 +1,655 @@
+/*
+* CSS 초기화 (Reset)
+* 모든 브라우저의 기본 여백을 제거합니다.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+* 폰트 등록
+* '마포당인리발전소체' 폰트를 등록합니다.
+*/
+@font-face {
+    font-family: '마포당인리발전소체';
+    src: url('./fonts/MapoDPP.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url(./fonts/Pretendard-Regular.otf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('./fonts/DungGeunMo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '빛의계승자체';
+    src: url('./fonts/HeirofLightBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '경기천년제목';
+    src: url('./fonts/경기천년제목_Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+* Body Styles
+*/
+body {
+    line-height: 1.5;
+    font-family: 'Pretendard-Regular', sans-serif;
+    background-color: #0e0e0e;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 75px;
+}
+
+/*
+* Main Header Styles
+*/
+/*
+ * Main Header Styles 수정
+ */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0e0e0e;
+    color: #ffffff;
+    /* padding-right를 20px로 설정하여 오른쪽 끝에 여백을 줍니다. */
+    padding: 2.5px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+.main-header-left {
+    flex: 1;
+}
+.main-header-right {
+    flex: 1;
+    display: flex;
+    /* 오른쪽 끝으로 정렬하는 것은 그대로 두되, 패딩으로 여백을 만듭니다. */
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*
+ * 헤더 링크 스타일
+ * 링크 자체에 margin-right를 주면 더 쉽게 여백을 조절할 수 있습니다.
+ */
+.header-link {
+    font-family: 'Pretendard-Regular', sans-serif;
+    font-size: 1.2em;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    /* 여기에 오른쪽 여백을 추가하여 로고와 거리를 둡니다. */
+    margin-right: 20px;
+}
+
+.header-link:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+.main-header-left, .main-header-right {
+    flex: 1;
+}
+.logo {
+    text-align: center;
+}
+.logo-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*
+* Intro Section Styles
+*/
+.intro-section {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(43, 43, 43, 0) 60%, #0e0e0e 95%), url('./images/BG1_waifu2x_art_noise1_scale.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 -10px 0 0 #0e0e0e;
+}
+.text-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/*
+ * Intro Section Styles
+ */
+.animated-username-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15vw;
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 0;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-name: font-fade-in-out;
+    animation-fill-mode: forwards;
+    
+    /* 오직 하얀색 네온 효과 */
+    text-shadow: 
+        0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 6px #fff,
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 15px rgba(255, 255, 255, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.4);
+}
+.font-1 { font-family: '마포당인리발전소체', sans-serif; animation-delay: 0s; }
+.font-2 { font-family: '빛의계승자체', sans-serif; animation-delay: 2s; }
+.font-3 { font-family: '경기천년제목', sans-serif; animation-delay: 4s; }
+.font-4 { font-family: Georgia, serif; animation-delay: 6s; }
+.font-5 { font-family: 'DungGeunMo', sans-serif; animation-delay: 8s; }
+
+@media (min-width: 768px) {
+    .animated-username-item {
+        font-size: 200px;
+    }
+}
+@keyframes font-fade-in-out {
+    0%, 100% { opacity: 0; filter: blur(10px); }
+    5% { opacity: 1; filter: blur(0px); }
+    15% { opacity: 1; filter: blur(0px); }
+    20%, 90% { opacity: 0; filter: blur(10px); }
+}
+
+/*
+* 프로필 및 설명 섹션 스타일
+*/
+/*
+ * 섹션 제목 스타일
+ */
+
+
+.section-title {
+    font-family: 'Pretendard-Regular', sans-serif;
+    font-size: 5em; /* 원하는 크기로 조절하세요 */
+    color: #ffffff;
+    margin-bottom: 50px; /* 아래쪽 구역과의 간격 */
+    text-transform: uppercase; /* 대문자로 표시 */
+}
+
+/*
+ * 프로필 및 설명 섹션 스타일 (기존 코드)
+ */
+.profile-section {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column; /* 제목과 구역들을 세로로 정렬 */
+    align-items: center;
+    background-color: #0e0e0e;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1500px;
+    flex-wrap: wrap;
+}
+
+.profile-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* 구역들이 동일한 너비를 갖도록 함 */
+    min-width: 300px; /* 최소 너비를 지정하여 너무 작아지는 것을 방지 */
+    margin-bottom: 40px; /* 줄바꿈 시 아래쪽 마진 */
+}
+
+/* 기존 .description-box 스타일은 그대로 유지 */
+/*
+ * 각 구역에 추가된 사진 스타일
+ */
+.profile-item-pic {
+    width: 200px; /* 사진 너비 */
+    height: 200px; /* 사진 높이 */
+    object-fit: cover;
+    border-radius: 50%; /* 이미지를 원형으로 만듭니다 */
+    border: 2px solid #ffffff; /* 테두리 추가 */
+    margin-bottom: -40px; /* 사진이 박스와 겹치도록 마이너스 마진 적용 */
+    z-index: 1; /* 사진이 박스 위에 오도록 설정 */
+}
+
+
+.about-me-section {
+    padding: 100px 20px;
+    color: #ffffff;
+    background-color: #0e0e0e;
+    text-align: center;
+}
+
+
+/*
+ * About Me 박스 스타일
+ */
+.about-me-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #3a3a3a;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: left; /* 텍스트 정렬을 왼쪽으로 변경 */
+    display: flex; /* 사진과 텍스트를 가로로 나란히 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 40px; /* 사진과 텍스트 사이의 간격 */
+}
+
+/*
+ * 프로필 사진 스타일
+ */
+.about-me-profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff; /* 흰색 테두리 추가 */
+}
+
+/*
+ * 텍스트 컨테이너 스타일
+ */
+.about-me-text {
+    flex: 1; /* 남은 공간을 모두 차지하도록 설정 */
+}
+
+/*
+ * 박스 안의 제목과 본문 폰트 크기
+ */
+.about-me-box h3 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.about-me-box p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+
+/*
+ * 프로젝트 섹션 스타일
+ */
+.projects-section {
+    padding: 100px 20px;
+    box-shadow: inset 0 -10px 0 0 #0e0e0e;
+    color: #ffffff;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* 구역 사이의 간격 */
+    flex-wrap: wrap;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+.project-item {
+    flex: 1; /* 구역이 동일한 너비를 갖도록 함 */
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease; /* 마우스를 올렸을 때 확대 효과 */
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* 마우스를 올렸을 때 이미지 확대 효과 */
+}
+
+
+.project-img {
+    width: 100%; /* 부모 컨테이너에 맞춰 너비를 100%로 설정 */
+    height: auto; /* 높이를 자동으로 조절 */
+    border-radius: 10px; /* 이미지 모서리를 둥글게 */
+    margin-bottom: 20px; /* 이미지와 텍스트 사이의 간격 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
+    border: 3px solid #ffffff; /* 흰색 테두리 추가 */
+}
+
+/*
+ * 프로젝트 정보 박스 스타일
+ */
+.project-info-box {
+    width: 100%;
+    padding: 20px;
+    background-color: #2b2b2b; /* 박스 배경색 */
+    border-radius: 0 0 10px 10px; /* 아래쪽 모서리만 둥글게 */
+    margin-top: -20px; /* 이미지와 겹치도록 마이너스 마진 */
+    position: relative;
+    z-index: 1; /* 이미지 위에 오도록 설정 */
+    text-align: left;
+}
+
+.project-description {
+    font-size: 3em;
+    line-height: 1.6;
+    margin-bottom: 15px; /* 설명과 태그 사이의 간격 */
+}
+
+/*
+ * 프로젝트 태그 스타일
+ */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 태그 사이의 간격 */
+}
+
+.project-tags span {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/*
+ * 메인 이미지 섹션 스타일
+ */
+.main-image-section {
+    padding: 60px 0px;
+    background-color: #0e0e0e;
+}
+
+.main-image-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: blur(5px); /* 흐림 효과 */
+    transition: filter 0.5s ease-in-out;
+}
+
+.main-image:hover {
+    filter: blur(0px);
+}
+
+.main-image-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative; /* 자식 요소(버튼)를 상대적으로 위치시키기 위해 추가 */
+}
+
+/* * 버튼의 디자인은 header-link와 동일하게, 위치만 가운데로 
+ */
+.main-image-button {
+    /* 디자인: header-link와 동일 */
+    font-family: '마포당인리발전소체', sans-serif;
+    font-size: 5em;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+
+    /* 위치: 이미지 위, 정중앙 */
+    position: absolute; /* 부모(main-image-container)를 기준으로 위치 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬을 위한 트릭 */
+    z-index: 2; /* 이미지가 버튼을 가리지 않도록 */
+}
+
+/* 마우스를 올렸을 때 효과 */
+.main-image-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+    
+    /*
+ * 기존 description-box 스타일에서 margin-top을 제거하거나 조절합니다.
+ */
+.description-box {
+    width: 100%;
+    background-color: #3a3a3a;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 100px; /* 사진이 있을 때를 고려한 마진 (필요에 따라 조절) */
+}
+.description-box h3 {
+    font-size: 2em; /* 이 값을 변경하세요 */
+    margin-bottom: 20px;
+}
+
+.description-box p {
+    font-size: 1.2em; /* 이 값을 변경하세요 */
+    line-height: 1.8;
+}
+
+/*
+ * 구역 사이의 구분선 스타일
+ */
+.divider {
+    width: 1px; /* 선의 두께 */
+    height: 500px; /* 선의 길이 (필요에 따라 조절) */
+    background: linear-gradient(to bottom, transparent, #ffffff, transparent);
+    /* 아래는 구역들이 세로로 쌓였을 때를 위한 CSS (선택사항) */
+    /*
+    @media (max-width: 991px) {
+        width: 100%;
+        height: 2px;
+        margin: 40px 0;
+        background: linear-gradient(to right, transparent, #ffffff, transparent);
+    }
+    */
+}
+
+
+
+/*
+ * 그림체 미리보기 섹션 스타일
+ */
+.art-preview-section {
+    padding: 100px 20px;
+    background-image: linear-gradient(to bottom, rgba(43, 43, 43, 0) 80%, #141414 95%);
+    box-shadow: inset 0 -10px 0 0 #141414;
+    color: #ffffff;
+    text-align: center;
+}
+
+.art-preview-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* 구역 사이의 간격 */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.art-preview-item {
+    flex: 1; /* 구역이 동일한 너비를 갖도록 함 */
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.art-preview-img {
+    width: 100%; /* 부모 컨테이너에 맞춰 너비를 100%로 설정 */
+    height: auto; /* 높이를 자동으로 조절 */
+    border-radius: 10px; /* 이미지 모서리를 둥글게 */
+    margin-bottom: 20px; /* 이미지와 텍스트 사이의 간격 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
+    border: 3px solid #ffffff; /* 흰색 테두리 추가 */
+}
+
+.art-preview-description {
+    font-size: 2.5em;
+    line-height: 1.6;
+    max-width: 500px; /* 텍스트의 최대 너비를 지정 */
+}
+
+/*
+ * 푸터(Footer) 스타일
+ */
+.main-footer-contact {
+    background-color: #141414;
+    color: #ffffff;
+    padding: 20px;
+    text-align: right; /* 텍스트를 오른쪽으로 정렬 */
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.main-footer-contact p {
+    margin: 0; /* 단락 태그의 기본 여백 제거 */
+}
+
+/*
+ * 스크롤 감지 애니메이션을 위한 기본 스타일
+ */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ------------------- 경계선 -------------------------------- */
+
+/*
+ * 작품 리스트 섹션 스타일
+ */
+.works-list-section {
+    padding: 100px 20px;
+    background-color: #0e0e0e;
+    color: #ffffff;
+    text-align: center;
+}
+
+.works-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 40px;
+    max-width: 2500px;
+    margin: 0 auto;
+}
+
+
+/* 링크 아이콘 컨테이너 스타일 */
+.work-link-icon-container {
+    width: 100%;
+    text-align: left; /* 아이콘을 왼쪽으로 정렬 */
+    margin-top: 10px; /* 태그와의 간격 */
+}
+
+/* 링크 아이콘 자체의 스타일 */
+.link-icon-img {
+    width: 40px; /* 아이콘 크기 */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-right: 10px;
+    border: solid 2px #ffffff;
+}
+
+.link-icon-img:hover {
+    transform: scale(1.1); /* 호버 시 아이콘 확대 효과 */
+}
+
+.work-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #2b2b2b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.work-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.work-info-box {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+}
+
+.work-description {
+    font-size: 2em;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.work-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.work-tags span {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.work-link-icon-container a {
+    text-decoration: none; /* 링크의 기본 밑줄 제거 */
+    border: none; /* 링크의 테두리 제거 */
+}
