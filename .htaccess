@@ -1,0 +1,10 @@
+# URL에서 .html 확장자 제거
+RewriteEngine On
+
+# .html 확장자로 직접 접근 시 확장자 없는 URL로 리다이렉트
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1? [NC,L,R=301]
+
+# 확장자 없는 URL을 .html 파일로 내부 리다이렉트
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
