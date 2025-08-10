@@ -1,201 +1,251 @@
 <!DOCTYPE html>
 <html lang="ko">
-<!DOCTYPE html>
-<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>작품 리스트</title>
-
+    <title>ctv 작품 리스트 - White Space Series & General Works</title>
+    
+    <!-- SEO 및 메타데이터 -->
+    <meta name="description" content="ctv의 전체 작품 목록을 확인하세요. White Space 시리즈와 일반 작품들을 포함한 포트폴리오입니다.">
+    <meta name="keywords" content="ctv, 작품 리스트, White Space, Zero Point, 캐릭터챗, 포트폴리오">
+    <meta name="author" content="ctv">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ctv 작품 리스트 - Create, Talk, Verse">
+    <meta property="og:description" content="ctv의 모든 작품을 한눈에 보세요. White Space 시리즈부터 다양한 창작물까지">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./images/하양투명로고.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ctv 작품 리스트">
+    <meta name="twitter:description" content="ctv의 모든 작품을 한눈에 보세요. White Space 시리즈부터 다양한 창작물까지">
+    
+    <!-- 폰트 최적화 -->
+    <link rel="preload" href="./fonts/Pretendard-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./fonts/MapoDPP.ttf" as="font" type="font/ttf" crossorigin>
+    
+    <!-- 스타일시트 -->
     <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
 
+    <!-- 파비콘 -->
     <link rel="icon" href="images/파비콘.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/파비콘.png">
+    
+    <!-- 테마 색상 -->
+    <meta name="theme-color" content="#0e0e0e">
 </head>
+
 <body>
-    <header class="main-header">
+    <!-- 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-link" style="position: absolute; left: -9999px; z-index: 999; padding: 8px 16px; background: #000; color: #fff; text-decoration: none;">메인 콘텐츠로 바로가기</a>
+    
+    <header class="main-header" role="banner">
         <div class="main-header-left"></div>
         <div class="logo">
-            <a href="#">
-                <img src="images/하양투명로고.png" alt="ctv 로고" class="logo-img">
+            <a href="index.html" aria-label="ctv 홈페이지 메인으로 이동">
+                <img src="images/하양투명로고.png" alt="ctv 로고 - Create, Talk, Verse" class="logo-img" width="70" height="70">
             </a>
         </div>
-        <div class="main-header-right">
+        <nav class="main-header-right" role="navigation" aria-label="주요 네비게이션">
             <a href="https://ctv0928.com" class="header-link">메인 페이지로 돌아가기</a>
-        </div>
+        </nav>
     </header>
     
-    <section class="works-list-section hidden">
-        <h1 class="section-title">White Space Series</h1>
-        <div class="works-list-container">
-            <div class="work-item">
-                <img src="./images/ZEROPOINT 명함 (신).png" alt="Zero: Point" class="work-img">
-                <div class="work-info-box">
-                    <p class="work-description">Zero: Point</p>
-                    
-                    <div class="work-tags">
-                        <span>#사이버펑크</span>
-                        <span>#액션</span>
-                        <span>#whitespace</span>
-                    </div>
+    <main id="main-content">
+        <section class="works-list-section hidden" aria-labelledby="whitespace-title">
+            <h1 class="section-title" id="whitespace-title">White Space Series</h1>
+            <div class="works-list-container">
+                <article class="work-item">
+                    <img src="./images/ZEROPOINT 명함 (신).png" alt="Zero: Point 작품 메인 이미지 - 사이버펑크 액션 작품" class="work-img" loading="lazy">
+                    <div class="work-info-box">
+                        <h2 class="work-description">Zero: Point</h2>
+                        
+                        <div class="work-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#사이버펑크</span>
+                            <span role="listitem">#액션</span>
+                            <span role="listitem">#whitespace</span>
+                        </div>
 
-                    <div class="work-link-icon-container">
-                        <a href="https://your-whitespace-link-1.com" target="_blank" class="work-link-icon">
-                            <img src="./images/코멧로고.png" alt="링크로 이동" class="link-icon-img">
-                        </a>
-                        <a href="https://your-whitespace-link-2.com" target="_blank" class="work-link-icon">
-                            <img src="./images/미공개.png" alt="링크로 이동" class="link-icon-img">
-                        </a>
+                        <div class="work-link-icon-container">
+                            <a href="https://your-whitespace-link-1.com" target="_blank" rel="noopener noreferrer" class="work-link-icon" aria-label="코멧에서 Zero: Point 작품 보기">
+                                <img src="./images/코멧로고.png" alt="코멧 플랫폼 아이콘" class="link-icon-img" width="40" height="40">
+                            </a>
+                            <a href="https://your-whitespace-link-2.com" target="_blank" rel="noopener noreferrer" class="work-link-icon" aria-label="추가 플랫폼에서 작품 보기 (미공개)">
+                                <img src="./images/미공개.png" alt="미공개 플랫폼 아이콘" class="link-icon-img" width="40" height="40">
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </article>
+                
+                <article class="work-item">
+                    <img src="./images/coming soon.png" alt="준비중인 White Space 시리즈 신작" class="work-img" loading="lazy">
+                    <div class="work-info-box">
+                        <h2 class="work-description">Coming Soon</h2>
+
+                        <div class="work-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#whitespace</span>
+                        </div>
+
+                        <div class="work-link-icon-container">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="work-link-icon" aria-label="곧 공개될 예정입니다" aria-disabled="true">
+                                <img src="./images/미공개.png" alt="미공개 상태" class="link-icon-img" width="40" height="40">
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="work-item">
+                    <img src="./images/coming soon.png" alt="준비중인 White Space 시리즈 신작" class="work-img" loading="lazy">
+                    <div class="work-info-box">
+                        <h2 class="work-description">Coming Soon</h2>
+
+                        <div class="work-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#whitespace</span>
+                        </div>
+
+                        <div class="work-link-icon-container">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="work-link-icon" aria-label="곧 공개될 예정입니다" aria-disabled="true">
+                                <img src="./images/미공개.png" alt="미공개 상태" class="link-icon-img" width="40" height="40">
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="work-item">
+                    <img src="./images/coming soon.png" alt="준비중인 White Space 시리즈 신작" class="work-img" loading="lazy">
+                    <div class="work-info-box">
+                        <h2 class="work-description">Coming Soon</h2>
+
+                        <div class="work-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#whitespace</span>
+                        </div>
+
+                        <div class="work-link-icon-container">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="work-link-icon" aria-label="곧 공개될 예정입니다" aria-disabled="true">
+                                <img src="./images/미공개.png" alt="미공개 상태" class="link-icon-img" width="40" height="40">
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
-            
-            <div class="work-item">
-                <img src="./images/coming soon.png" alt="Coming Soon" class="work-img">
-                <div class="work-info-box">
-                    <p class="work-description">Coming Soon</p>
+        </section>
 
-                    <div class="work-tags">
-                        <span>#???</span>
-                        <span>#???</span>
-                        <span>#whitespace</span>
-                    </div>
+        <section class="works-list-section hidden" aria-labelledby="general-title">
+            <h1 class="section-title" id="general-title">General Works</h1>
+            <div class="works-list-container">
+                <article class="work-item">
+                    <img src="./images/coming soon.png" alt="준비중인 일반 작품" class="work-img" loading="lazy">
+                    <div class="work-info-box">
+                        <h2 class="work-description">Coming Soon</h2>
 
-                    <div class="work-link-icon-container">
-                        <a href="https://your-whitespace-link-1.com" target="_blank" class="work-link-icon">
-                            <img src="./images/미공개.png" alt="링크로 이동" class="link-icon-img">
-                        </a>
+                        <div class="work-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                        </div>
+
+                        <div class="work-link-icon-container">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="work-link-icon" aria-label="곧 공개될 예정입니다" aria-disabled="true">
+                                <img src="./images/미공개.png" alt="미공개 상태" class="link-icon-img" width="40" height="40">
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </article>
+                
+                <article class="work-item">
+                    <img src="./images/coming soon.png" alt="준비중인 일반 작품" class="work-img" loading="lazy">
+                    <div class="work-info-box">
+                        <h2 class="work-description">Coming Soon</h2>
+
+                        <div class="work-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                        </div>
+
+                        <div class="work-link-icon-container">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="work-link-icon" aria-label="곧 공개될 예정입니다" aria-disabled="true">
+                                <img src="./images/미공개.png" alt="미공개 상태" class="link-icon-img" width="40" height="40">
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="work-item">
+                    <img src="./images/coming soon.png" alt="준비중인 일반 작품" class="work-img" loading="lazy">
+                    <div class="work-info-box">
+                        <h2 class="work-description">Coming Soon</h2>
+
+                        <div class="work-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                        </div>
+
+                        <div class="work-link-icon-container">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="work-link-icon" aria-label="곧 공개될 예정입니다" aria-disabled="true">
+                                <img src="./images/미공개.png" alt="미공개 상태" class="link-icon-img" width="40" height="40">
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="work-item">
+                    <img src="./images/coming soon.png" alt="준비중인 일반 작품" class="work-img" loading="lazy">
+                    <div class="work-info-box">
+                        <h2 class="work-description">Coming Soon</h2>
+
+                        <div class="work-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                        </div>
+
+                        <div class="work-link-icon-container">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="work-link-icon" aria-label="곧 공개될 예정입니다" aria-disabled="true">
+                                <img src="./images/미공개.png" alt="미공개 상태" class="link-icon-img" width="40" height="40">
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
+        </section>
+    </main>
 
-            <div class="work-item">
-                <img src="./images/coming soon.png" alt="Coming Soon" class="work-img">
-                <div class="work-info-box">
-                    <p class="work-description">Coming Soon</p>
-
-                    <div class="work-tags">
-                        <span>#???</span>
-                        <span>#???</span>
-                        <span>#whitespace</span>
-                    </div>
-
-                    <div class="work-link-icon-container">
-                        <a href="https://your-whitespace-link-1.com" target="_blank" class="work-link-icon">
-                            <img src="./images/미공개.png" alt="링크로 이동" class="link-icon-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <img src="./images/coming soon.png" alt="Coming Soon" class="work-img">
-                <div class="work-info-box">
-                    <p class="work-description">Coming Soon</p>
-
-                    <div class="work-tags">
-                        <span>#???</span>
-                        <span>#???</span>
-                        <span>#whitespace</span>
-                    </div>
-
-                    <div class="work-link-icon-container">
-                        <a href="https://your-whitespace-link-1.com" target="_blank" class="work-link-icon">
-                            <img src="./images/미공개.png" alt="링크로 이동" class="link-icon-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <section class="works-list-section hidden">
-        <h1 class="section-title">General Works</h1>
-        <div class="works-list-container">
-            <div class="work-item">
-                <img src="./images/coming soon.png" alt="Coming Soon" class="work-img">
-                <div class="work-info-box">
-                    <p class="work-description">Coming Soon</p>
-
-                    <div class="work-tags">
-                        <span>#???</span>
-                        <span>#???</span>
-                        <span>#???</span>
-                    </div>
-
-                    <div class="work-link-icon-container">
-                        <a href="https://your-whitespace-link-1.com" target="_blank" class="work-link-icon">
-                            <img src="./images/미공개.png" alt="링크로 이동" class="link-icon-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="work-item">
-                <img src="./images/coming soon.png" alt="Coming Soon" class="work-img">
-                <div class="work-info-box">
-                    <p class="work-description">Coming Soon</p>
-
-                    <div class="work-tags">
-                        <span>#???</span>
-                        <span>#???</span>
-                        <span>#???</span>
-                    </div>
-
-                    <div class="work-link-icon-container">
-                        <a href="https://your-whitespace-link-1.com" target="_blank" class="work-link-icon">
-                            <img src="./images/미공개.png" alt="링크로 이동" class="link-icon-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <img src="./images/coming soon.png" alt="Coming Soon" class="work-img">
-                <div class="work-info-box">
-                    <p class="work-description">Coming Soon</p>
-
-                    <div class="work-tags">
-                        <span>#???</span>
-                        <span>#???</span>
-                        <span>#???</span>
-                    </div>
-
-                    <div class="work-link-icon-container">
-                        <a href="https://your-whitespace-link-1.com" target="_blank" class="work-link-icon">
-                            <img src="./images/미공개.png" alt="링크로 이동" class="link-icon-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <img src="./images/coming soon.png" alt="Coming Soon" class="work-img">
-                <div class="work-info-box">
-                    <p class="work-description">Coming Soon</p>
-
-                    <div class="work-tags">
-                        <span>#???</span>
-                        <span>#???</span>
-                        <span>#???</span>
-                    </div>
-
-                    <div class="work-link-icon-container">
-                        <a href="https://your-whitespace-link-1.com" target="_blank" class="work-link-icon">
-                            <img src="./images/미공개.png" alt="링크로 이동" class="link-icon-img">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            </div>
-    </section>
-    <footer class="main-footer-contact">
-        <p>Discord: ctv0928</p>
-        <p>Email: ctv.devai@gmail.com</p>
+    <footer class="main-footer-contact" role="contentinfo">
+        <address>
+            <p>Discord: <a href="#" aria-label="Discord로 ctv에게 연락하기">ctv0928</a></p>
+            <p>Email: <a href="mailto:ctv.devai@gmail.com" aria-label="이메일로 ctv에게 연락하기">ctv.devai@gmail.com</a></p>
+        </address>
     </footer>
+
+    <!-- 스크린 리더용 숨김 텍스트 스타일 -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .skip-link:focus {
+            left: 8px;
+            top: 8px;
+        }
+    </style>
+
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
