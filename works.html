@@ -222,7 +222,7 @@
 
     <footer class="main-footer-contact" role="contentinfo">
         <address>
-            <p>Discord: <a href="#" aria-label="Discord로 ctv에게 연락하기">ctv0928</a></p>
+            <p>Discord: <span class="discord-copy" onclick="copyDiscordId()" aria-label="Discord ID 복사하기" role="button" tabindex="0">ctv0928</span></p>
             <p>Email: <a href="mailto:ctv.devai@gmail.com" aria-label="이메일로 ctv에게 연락하기">ctv.devai@gmail.com</a></p>
         </address>
     </footer>
@@ -244,8 +244,129 @@
             left: 8px;
             top: 8px;
         }
+        /* Discord 복사 버튼 스타일 */
+        .discord-copy {
+            cursor: pointer;
+            color: #ffffff;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .discord-copy:hover {
+            color: #7289da;
+        }
+        .discord-copy:focus {
+            outline: 2px solid #7289da;
+            outline-offset: 2px;
+        }
+        .discord-copy:active {
+            color: #5865f2;
+        }
     </style>
 
     <script src="script.js"></script>
+    
+    <!-- Discord 복사 기능 -->
+    <script>
+        function copyDiscordId() {
+            const discordId = 'ctv0928';
+            
+            // 클립보드 API 지원 확인
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(discordId).then(() => {
+                    showCopyFeedback('Discord ID가 복사되었습니다!');
+                }).catch(err => {
+                    console.error('복사 실패:', err);
+                    fallbackCopy(discordId);
+                });
+            } else {
+                // 폴백 방법
+                fallbackCopy(discordId);
+            }
+        }
+        
+        // 구형 브라우저 대응
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopyFeedback('Discord ID가 복사되었습니다!');
+            } catch (err) {
+                console.error('복사 실패:', err);
+                showCopyFeedback('복사에 실패했습니다. 수동으로 복사해주세요: ' + text);
+            } finally {
+                document.body.removeChild(textArea);
+            }
+        }
+        
+        // 복사 완료 알림
+        function showCopyFeedback(message) {
+            // 기존 알림 제거
+            const existingNotification = document.querySelector('.copy-notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // 새 알림 생성
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #7289da;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 5px;
+                font-family: 'Pretendard-Regular', sans-serif;
+                font-size: 14px;
+                z-index: 9999;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // 애니메이션
+            requestAnimationFrame(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translateY(0)';
+            });
+            
+            // 3초 후 제거
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 3000);
+        }
+        
+        // 키보드 접근성 (엔터/스페이스바로 실행)
+        document.addEventListener('DOMContentLoaded', () => {
+            const discordCopy = document.querySelector('.discord-copy');
+            if (discordCopy) {
+                discordCopy.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        copyDiscordId();
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
