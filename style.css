@@ -487,8 +487,8 @@ body {
 
 .works-list-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(500px, 100%), 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+    gap: 30px;
     max-width: 2500px;
     margin: 0 auto;
 }
