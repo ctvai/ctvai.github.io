@@ -3,155 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인 페이지</title>
-
+    <title>ctv - Create, Talk, Verse</title>
+    
+    <!-- SEO 및 메타데이터 -->
+    <meta name="description" content="코멧 등 캐릭터챗 플랫폼에서 활동하는 ctv의 포트폴리오. 건전한 세이프티 작품과 독창적인 세계관을 제작합니다.">
+    <meta name="keywords" content="ctv, 캐릭터챗, 포트폴리오, 세이프티, 작품, 창작">
+    <meta name="author" content="ctv">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ctv - Create, Talk, Verse">
+    <meta property="og:description" content="건전한 세이프티 작품과 독창적인 세계관을 만드는 창작자 ctv의 포트폴리오">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./images/하양투명로고.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ctv - Create, Talk, Verse">
+    <meta name="twitter:description" content="건전한 세이프티 작품과 독창적인 세계관을 만드는 창작자 ctv의 포트폴리오">
+    
+    <!-- 폰트 최적화 -->
+    <link rel="preload" href="./fonts/Pretendard-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./fonts/MapoDPP.ttf" as="font" type="font/ttf" crossorigin>
+    
+    <!-- 스타일시트 -->
     <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
 
+    <!-- 파비콘 -->
     <link rel="icon" href="images/파비콘.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/파비콘.png">
+    
+    <!-- 테마 색상 -->
+    <meta name="theme-color" content="#0e0e0e">
 </head>
 
 <body>
-    <header class="main-header">
+    <!-- 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-link" style="position: absolute; left: -9999px; z-index: 999; padding: 8px 16px; background: #000; color: #fff; text-decoration: none;">메인 콘텐츠로 바로가기</a>
+    
+    <header class="main-header" role="banner">
         <div class="main-header-left"></div>
         <div class="logo">
-            <a href="#">
-                <img src="images/하양투명로고.png" alt="ctv 로고" class="logo-img">
+            <a href="#" aria-label="ctv 홈페이지 메인으로 이동">
+                <img src="images/하양투명로고.png" alt="ctv 로고 - Create, Talk, Verse" class="logo-img" width="70" height="70">
             </a>
         </div>
-        <div class="main-header-right">
+        <nav class="main-header-right" role="navigation" aria-label="주요 네비게이션">
             <a href="works.html" class="header-link">작품 리스트 바로 보러가기</a>
-        </div>
+        </nav>
     </header>
 
-    <section class="intro-section">
-        <div class="text-container">
-            <div class="animated-username-container">
-                <span class="animated-username-item font-1">Welcome, {user}.</span>
-                <span class="animated-username-item font-2">Welcome, {user}.</span>
-                <span class="animated-username-item font-3">Welcome, {user}.</span>
-                <span class="animated-username-item font-4">Welcome, {user}.</span>
-                <span class="animated-username-item font-5">Welcome, {user}.</span>
+    <main id="main-content">
+        <section class="intro-section" aria-label="환영 메시지">
+            <div class="text-container">
+                <div class="animated-username-container" role="img" aria-label="Welcome, user라는 텍스트가 다양한 폰트로 애니메이션되며 표시됩니다">
+                    <span class="animated-username-item font-1">Welcome, {user}.</span>
+                    <span class="animated-username-item font-2">Welcome, {user}.</span>
+                    <span class="animated-username-item font-3">Welcome, {user}.</span>
+                    <span class="animated-username-item font-4">Welcome, {user}.</span>
+                    <span class="animated-username-item font-5">Welcome, {user}.</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about-me-section hidden">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-me-box">
-            <img src="./images/파비콘.png" alt="ctv 프로필 사진" class="about-me-profile-pic">
-
-            <div class="about-me-text">
-                <h3> Create, Talk, Verse.</h3>
-                <p>
-                    코멧 등 캐릭터챗 플랫폼에서 활동하고 있는 ctv입니다.
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="projects-section hidden">
-        <h2 class="section-title">Selected works</h2>
-        <div class="projects-container">
-            <div class="project-item">
-                <img src="./images/ZEROPOINT 명함 (신).png" alt="Zero: Point" class="project-img">
-                <div class="project-info-box">
-                    <p class="project-description">Zero: Point</p>
-                    <div class="project-tags">
-                        <span>#사이버펑크</span>
-                        <span>#액션</span>
-                        <span>#whitespace</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-item">
-                <img src="./images/coming soon.png" alt="프로젝트 이미지 2" class="project-img">
-                <div class="project-info-box">
-                    <p class="project-description">???</p>
-                    <div class="project-tags">
-                        <span>#???</span>
-                        <span>#???</span>
-                        <span>#???</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-item">
-                <img src="./images/coming soon.png" alt="프로젝트 이미지 3" class="project-img">
-                <div class="project-info-box">
-                    <p class="project-description">???</p>
-                    <div class="project-tags">
-                        <span>#???</span>
-                        <span>#???</span>
-                        <span>#???</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="main-image-section hidden">
-        <div class="main-image-container">
-            <img src="./images/41.png" alt="섹션 아래 큰 사진" class="main-image">
-            <a href="works.html" class="main-image-button">더 많은 작품 보기</a>
-        </div>
-    </section>
-    <section class="profile-section hidden">
-        <h2 class="section-title">My Individuality</h2>
-        <div class="profile-container">
-            <div class="profile-item">
-                <img src="./images/세이프티.png" alt="왼쪽 구역 사진" class="profile-item-pic">
-                <div class="description-box">
-                    <h3>건전한 작품</h3>
+        <section class="about-me-section hidden" aria-labelledby="about-title">
+            <h2 class="section-title" id="about-title">About Me</h2>
+            <div class="about-me-box">
+                <img src="./images/파비콘.png" alt="ctv 프로필 이미지 - 창작자의 대표 캐릭터" class="about-me-profile-pic" width="150" height="150">
+                <div class="about-me-text">
+                    <h3>Create, Talk, Verse.</h3>
                     <p>
-                        모든 연령대가 즐길 수 있는 건전한 세이프티 작품을 제작합니다.
+                        코멧 등 캐릭터챗 플랫폼에서 활동하고 있는 ctv입니다.
                     </p>
                 </div>
             </div>
-            <div class="divider"></div>
-            <div class="profile-item">
-                <img src="./images/기어.png" alt="가운데 구역 사진" class="profile-item-pic">
-                <div class="description-box">
-                    <h3>구체적인 설정</h3>
-                    <p>
-                        독자적인 세계관과 방대한 설정을 가지고 작품을 제작합니다.
-                    </p>
-                </div>
-            </div>
-            <div class="divider"></div>
-            <div class="profile-item">
-                <img src="./images/말풍선.png" alt="오른쪽 구역 사진" class="profile-item-pic">
-                <div class="description-box">
-                    <h3>적극적인 소통</h3>
-                    <p>
-                        이메일과 디스코드를 통해 건의사항을 알려주세요! 향후 작품에 반영이 될 수 있습니다.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="art-preview-section hidden">
-        <h2 class="section-title">Art Style Preview</h2>
-        <div class="art-preview-container">
-            <div class="art-preview-item">
-                <img src="./images/1.png" alt="그림체 미리보기 1" class="art-preview-img">
-                <p class="art-preview-description">Zero: Point - 엑시온</p>
+        <section class="projects-section hidden" aria-labelledby="projects-title">
+            <h2 class="section-title" id="projects-title">Selected works</h2>
+            <div class="projects-container">
+                <article class="project-item">
+                    <img src="./images/ZEROPOINT 명함 (신).png" alt="Zero: Point 작품 썸네일 - 사이버펑크 액션 작품의 대표 이미지" class="project-img" loading="lazy">
+                    <div class="project-info-box">
+                        <h3 class="project-description">Zero: Point</h3>
+                        <div class="project-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#사이버펑크</span>
+                            <span role="listitem">#액션</span>
+                            <span role="listitem">#whitespace</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item">
+                    <img src="./images/coming soon.png" alt="준비중인 신작 - 곧 공개될 예정입니다" class="project-img" loading="lazy">
+                    <div class="project-info-box">
+                        <h3 class="project-description">???</h3>
+                        <div class="project-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-item">
+                    <img src="./images/coming soon.png" alt="준비중인 신작 - 곧 공개될 예정입니다" class="project-img" loading="lazy">
+                    <div class="project-info-box">
+                        <h3 class="project-description">???</h3>
+                        <div class="project-tags" role="list" aria-label="작품 태그">
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                            <span role="listitem">#???</span>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="divider"></div>
-            <div class="art-preview-item">
-                <img src="./images/2.png" alt="그림체 미리보기 2" class="art-preview-img">
-                <p class="art-preview-description">전교 1등의 그녀 - ???</p>
+        </section>
+
+        <section class="main-image-section hidden" aria-labelledby="more-works">
+            <div class="main-image-container">
+                <img src="./images/41.png" alt="ctv 작품 갤러리 대표 이미지 - 다양한 창작물들의 조합" class="main-image" loading="lazy">
+                <a href="works.html" class="main-image-button" id="more-works" aria-describedby="more-works-desc">더 많은 작품 보기</a>
+                <span id="more-works-desc" class="sr-only">작품 목록 페이지로 이동하여 전체 포트폴리오를 확인할 수 있습니다</span>
             </div>
-        </div>
-    </section>
-    <footer class="main-footer-contact">
-        <p>Discord: ctv0928</p>
-        <p>Email: ctv.devai@gmail.com</p>
+        </section>
+
+        <section class="profile-section hidden" aria-labelledby="individuality-title">
+            <h2 class="section-title" id="individuality-title">My Individuality</h2>
+            <div class="profile-container">
+                <article class="profile-item">
+                    <img src="./images/세이프티.png" alt="안전 마크 아이콘 - 모든 연령대가 안전하게 즐길 수 있는 건전한 콘텐츠를 상징" class="profile-item-pic" loading="lazy">
+                    <div class="description-box">
+                        <h3>건전한 작품</h3>
+                        <p>
+                            모든 연령대가 즐길 수 있는 건전한 세이프티 작품을 제작합니다.
+                        </p>
+                    </div>
+                </article>
+                <div class="divider" role="separator" aria-hidden="true"></div>
+                <article class="profile-item">
+                    <img src="./images/기어.png" alt="톱니바퀴 아이콘 - 정교하고 체계적인 세계관 구축을 상징" class="profile-item-pic" loading="lazy">
+                    <div class="description-box">
+                        <h3>구체적인 설정</h3>
+                        <p>
+                            독자적인 세계관과 방대한 설정을 가지고 작품을 제작합니다.
+                        </p>
+                    </div>
+                </article>
+                <div class="divider" role="separator" aria-hidden="true"></div>
+                <article class="profile-item">
+                    <img src="./images/말풍선.png" alt="말풍선 아이콘 - 독자와의 활발한 소통을 상징" class="profile-item-pic" loading="lazy">
+                    <div class="description-box">
+                        <h3>적극적인 소통</h3>
+                        <p>
+                            이메일과 디스코드를 통해 건의사항을 알려주세요! 향후 작품에 반영이 될 수 있습니다.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="art-preview-section hidden" aria-labelledby="art-style-title">
+            <h2 class="section-title" id="art-style-title">Art Style Preview</h2>
+            <div class="art-preview-container">
+                <figure class="art-preview-item">
+                    <img src="./images/1.png" alt="Zero: Point의 주인공 엑시온 캐릭터 일러스트 - ctv의 대표적인 사이버펑크 스타일 그림체" class="art-preview-img" loading="lazy">
+                    <figcaption class="art-preview-description">Zero: Point - 엑시온</figcaption>
+                </figure>
+                <div class="divider" role="separator" aria-hidden="true"></div>
+                <figure class="art-preview-item">
+                    <img src="./images/2.png" alt="전교 1등의 그녀 작품의 미스터리한 캐릭터 일러스트 - ctv의 섬세한 캐릭터 표현 스타일" class="art-preview-img" loading="lazy">
+                    <figcaption class="art-preview-description">전교 1등의 그녀 - ???</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer-contact" role="contentinfo">
+        <address>
+            <p>Discord: <a href="#" aria-label="Discord로 ctv에게 연락하기">ctv0928</a></p>
+            <p>Email: <a href="mailto:ctv.devai@gmail.com" aria-label="이메일로 ctv에게 연락하기">ctv.devai@gmail.com</a></p>
+        </address>
     </footer>
+
+    <!-- 스크린 리더용 숨김 텍스트 스타일 -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .skip-link:focus {
+            left: 8px;
+            top: 8px;
+        }
+    </style>
+
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
